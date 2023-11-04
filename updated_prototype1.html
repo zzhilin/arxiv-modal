@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="ar5iv_0.7.4.min.css" type="text/css">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="html2canvas.min.js"></script>
+        <script src="addons.js"></script>
+        <script src="feedbackOverlay.js"></script>
+        <link rel="stylesheet" href="rwr5zpx.css">
+        <link rel="icon" type="image/png" href="https://static.arxiv.org/static/browse/0.3.4/images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://static.arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png" sizes="32x32">
+        <title>Enhanced arXiv Page 1103</title>
+        <style>
+            html,
+            body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            }
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto; 
+            }
+            .content-section {
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            }
+            img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            }
+            .zoomed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+            }
+            .zoomed img {
+            max-width: 90%;
+            max-height: 90%;
+            }
+            .equation-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100%;
+            white-space: nowrap;
+            }
+            .ltx-page-content {
+            z-index: 1000;
+            position:relative;
+            }
+
+        </style>
+        <!-- CSS only -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- Include MathJax for rendering math equations -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+            ></script>
+    </head>
+    <body>
+        <div class="content-section vsc-initializer">
+        <header class="navbar bg-body-tertiary mob_header">
+            <div class="container-fluid">
+                <!--toc button-->
+                <div class="subcontainer-fluid">
+                    <button class="navbar-toggler ar5iv-footer-button" type="button" data-bs-theme="dark" data-bs-toggle="collapse" aria-expanded="false" data-bs-target=".ltx_page_main &gt;.ltx_TOC.mobile" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" style="border:none; margin-right: 0em;">
+                    <span class="navbar-toggler-icon" style="width:1em;height:1em;margin-top: 0.1em;"></span>
+                    </button>          
+                    <!--back to abstract-->
+                    <!-- <a class="nav-link ar5iv-footer-button hover-effect" style="color: white; display:inline-flex; flex-direction: column; align-items:center; text-align:center" href="#"> -->
+                    <a class="nav-link ar5iv-footer-button hover-effect" style="color: white; margin-right:0em;" href="https://arxiv.org/abs/2308.05027v1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512" style="background-color:transparent; z-index:2">
+                            <style>svg{fill:rgb(255, 255, 255)}</style>
+                            <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"></path>
+                        </svg>
+                        <!-- <span style="font-size: 0.75em;">Abstract</span> -->
+                    </a>
+                    <!--dark mode-->
+                    <a class="nav-link ar5iv-toggle-color-scheme" href="javascript:toggleColorScheme()" title="Toggle ar5iv color scheme" style="padding: 0.6rem;margin-top: 0rem;">
+                    <span class="color-scheme-icon" aria-label="Light mode"></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <header class="desktop_header">
+            <div style="display: flex; width: 60%;">
+                <div class="header-message" role="banner" style="padding-left: 15px; padding-top: 5px;">
+                    This is <strong>Experimental HTML</strong>. We invite you to report rendering errors. <span class="sr-only">Use Alt+Y to toggle on accessible reporting links and Alt+Shift+Y to toggle off.</span> <a href="https://github.com/brucemiller/LaTeXML/wiki/Porting-LaTeX-packages-for-LaTeXML" target="_blank">View supported LaTeX packages</a> and <a href="https://github.com/brucemiller/LaTeXML/issues" target="_blank">help improve conversions</a>.
+                </div>
+            </div>
+            <div style="display: inline-flex; align-items: center;">
+                <a class="ar5iv-footer-button hover-effect" style="color: white;" href="https://browse.arxiv.org/latexml/2308.05027v1/2308.05027v1.html#footer">Give Feedback</a>
+                <a class="ar5iv-footer-button hover-effect" target="_blank" style="color: white;" href="https://browse.arxiv.org/latexml/2308.05027v1/2308.05027v1.html#myForm" onclick="event.preventDefault(); var modal = document.getElementById(&#39;myForm&#39;); modal.style.display = &#39;block&#39;; bugReportState.setInitiateWay(&#39;Header&#39;);">Open Issue</a>
+                <a class="ar5iv-footer-button hover-effect" style="color: white;" href="https://arxiv.org/abs/2308.05027v1">Back to Abstract</a>
+                <a class="ar5iv-toggle-color-scheme" href="javascript:toggleColorScheme()" title="Toggle ar5iv color scheme" style="float: right;">
+                <span class="color-scheme-icon"></span>
+                </a>
+            </div>
+        </header>
+        <div class="ltx_page_main" id="main">
+        <div class="ltx_page_content">
+        <article class="ltx_document ltx_authors_1line">
+        <h1 class="ltx_title ltx_title_document">High-temperature superconductivity induced by the Su-Schrieffer-Heeger electron-phonon coupling</h1>
+        <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+        <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+        <div class="ltx_authors">
+            <span class="ltx_creator ltx_role_author">
+            <span class="ltx_personname">Xun Cai
+            </span><span class="ltx_author_notes">
+            <span class="ltx_contact ltx_role_affiliation">Beijing National Laboratory for Condensed Matter Physics and Institute of Physics, Chinese Academy of Sciences, Beijing 100190, China
+            </span></span></span>
+            <span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+            <span class="ltx_personname">Zi-Xiang Li
+            </span><span class="ltx_author_notes">
+            <span class="ltx_contact ltx_role_email"><a href="mailto:zixiangli@iphy.ac.cn">zixiangli@iphy.ac.cn</a>
+            </span>
+            <span class="ltx_contact ltx_role_affiliation">Beijing National Laboratory for Condensed Matter Physics and Institute of Physics, Chinese Academy of Sciences, Beijing 100190, China
+            </span>
+            <span class="ltx_contact ltx_role_affiliation">University of Chinese Academy of Sciences, Beijing 100049, China
+            </span></span></span>
+            <span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+            <span class="ltx_personname">Hong Yao
+            </span><span class="ltx_author_notes">
+            <span class="ltx_contact ltx_role_email"><a href="mailto:yaohong@tsinghua.edu.cn">yaohong@tsinghua.edu.cn</a>
+            </span>
+            <span class="ltx_contact ltx_role_affiliation">Institute for Advanced Study, Tsinghua University, Beijing 100084, China
+            </span></span></span>
+        </div>
+        <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+        <div class="ltx_dates">(August 14, 2023)</div>
+        <div class="ltx_abstract">
+            <h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+            <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+            <p id="id20.id1" class="ltx_p">We introduce <span id="id20.id1.1" class="ltx_text ltx_font_italic">AbDiffuser</span>, an equivariant and physics-informed diffusion model for the joint generation of antibody 3D structures and sequences.
+                AbDiffuser is built on top of a new representation of protein structure, relies on a novel architecture for aligned proteins, and utilizes strong diffusion priors to improve the denoising process.
+                Our approach improves protein diffusion by taking advantage of domain knowledge and physics-based constraints; handles sequence-length changes; and reduces memory complexity by an order of magnitude enabling backbone and side chain generation. We validate AbDiffuser <span id="id20.id1.2" class="ltx_text ltx_font_italic">in silico</span> and <span id="id20.id1.3" class="ltx_text ltx_font_italic">in vitro</span>.
+                Numerical experiments showcase the ability of AbDiffuser to generate antibodies that closely track the sequence and structural properties of a reference set.
+                Laboratory experiments confirm that all 16 HER2 antibodies discovered were expressed at high levels and that 57.1% of selected designs were tight binders.
+            </p>
+            <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+        </div>
+        <section id="S1" class="ltx_section">
+        <h2 class="ltx_title ltx_title_section">
+            <span class="ltx_tag ltx_tag_section">1 </span>Introduction
+        </h2>
+        <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+        <div id="p1" class="ltx_para">
+            <p id="p1.3" class="ltx_p">
+                <span id="p1.3.1" class="ltx_text ltx_font_bold">Introduction</span>:
+                Pursuit for superconductivity (SC) with increasingly higher transition temperature at ambient pressure has been one of the central topics in physics <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib1" title="" class="ltx_ref">1</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib2" title="" class="ltx_ref">2</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib3" title="" class="ltx_ref">3</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib4" title="" class="ltx_ref">4</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib5" title="" class="ltx_ref">5</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib6" title="" class="ltx_ref">6</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib7" title="" class="ltx_ref">7</a>]</cite>.
+                In the BCS theory <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib8" title="" class="ltx_ref">8</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib9" title="" class="ltx_ref">9</a>]</cite>, electron-phonon coupling (EPC) is crucial for Cooper pairing in conventional superconductors. However, EPC in many conventional superconductors is relatively weak, giving rise to low transition temperature (
+                <math id="p1.1.m1.1" class="ltx_Math" alttext="T_{c}" display="inline">
+                    <semantics id="p1.1.m1.1a">
+                        <msub id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">
+                            <mi id="p1.1.m1.1.1.2" xref="p1.1.m1.1.1.2.cmml">T</mi>
+                            <mi id="p1.1.m1.1.1.3" xref="p1.1.m1.1.1.3.cmml">c</mi>
+                        </msub>
+                        <annotation-xml encoding="MathML-Content" id="p1.1.m1.1b">
+                            <apply id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">
+                                <csymbol cd="ambiguous" id="p1.1.m1.1.1.1.cmml" xref="p1.1.m1.1.1">subscript</csymbol>
+                                <ci id="p1.1.m1.1.1.2.cmml" xref="p1.1.m1.1.1.2">𝑇</ci>
+                                <ci id="p1.1.m1.1.1.3.cmml" xref="p1.1.m1.1.1.3">𝑐</ci>
+                            </apply>
+                        </annotation-xml>
+                        <annotation encoding="application/x-tex" id="p1.1.m1.1c">T_{c}</annotation>
+                        <annotation encoding="application/x-llamapun" id="p1.1.m1.1d">italic_T start_POSTSUBSCRIPT italic_c end_POSTSUBSCRIPT</annotation>
+                    </semantics>
+                </math>
+                ).
+                Even when EPC is strong, high temperature SC is usually hindered by various constraints <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib10" title="" class="ltx_ref">10</a>]</cite>, such as competing electronic/lattice instabilities and formation of heavy bipolarons <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib11" title="" class="ltx_ref">11</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib12" title="" class="ltx_ref">12</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib13" title="" class="ltx_ref">13</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib14" title="" class="ltx_ref">14</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib15" title="" class="ltx_ref">15</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib16" title="" class="ltx_ref">16</a>]</cite>.
+                For instance, for the Holstein electron-phonon model <cite class="citation-desktop ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib17" title="" class="ltx_ref">17</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib18" title="" class="ltx_ref">18</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib19" title="" class="ltx_ref">19</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib20" title="" class="ltx_ref">20</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib21" title="" class="ltx_ref">21</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib22" title="" class="ltx_ref">22</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib23" title="" class="ltx_ref">23</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib24" title="" class="ltx_ref">24</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib25" title="" class="ltx_ref">25</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib26" title="" class="ltx_ref">26</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib27" title="" class="ltx_ref">27</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib28" title="" class="ltx_ref">28</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib29" title="" class="ltx_ref">29</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib30" title="" class="ltx_ref">30</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib31" title="" class="ltx_ref">31</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib32" title="" class="ltx_ref">32</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib33" title="" class="ltx_ref">33</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib34" title="" class="ltx_ref">34</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib35" title="" class="ltx_ref">35</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib36" title="" class="ltx_ref">36</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib37" title="" class="ltx_ref">37</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib38" title="" class="ltx_ref">38</a>]</cite>, recent quantum Monte-Carlo (QMC) simulations showed that competing charge-density wave (CDW) instabilities emerges with the formation of heavy bipolarons and strongly suppressed
+                <math id="p1.2.m2.1" class="ltx_Math" alttext="T_{c}" display="inline">
+                    <semantics id="p1.2.m2.1a">
+                        <msub id="p1.2.m2.1.1" xref="p1.2.m2.1.1.cmml">
+                            <mi id="p1.2.m2.1.1.2" xref="p1.2.m2.1.1.2.cmml">T</mi>
+                            <mi id="p1.2.m2.1.1.3" xref="p1.2.m2.1.1.3.cmml">c</mi>
+                        </msub>
+                        <annotation-xml encoding="MathML-Content" id="p1.2.m2.1b">
+                            <apply id="p1.2.m2.1.1.cmml" xref="p1.2.m2.1.1">
+                                <csymbol cd="ambiguous" id="p1.2.m2.1.1.1.cmml" xref="p1.2.m2.1.1">subscript</csymbol>
+                                <ci id="p1.2.m2.1.1.2.cmml" xref="p1.2.m2.1.1.2">𝑇</ci>
+                                <ci id="p1.2.m2.1.1.3.cmml" xref="p1.2.m2.1.1.3">𝑐</ci>
+                            </apply>
+                        </annotation-xml>
+                        <annotation encoding="application/x-tex" id="p1.2.m2.1c">T_{c}</annotation>
+                        <annotation encoding="application/x-llamapun" id="p1.2.m2.1d">italic_T start_POSTSUBSCRIPT italic_c end_POSTSUBSCRIPT</annotation>
+                    </semantics>
+                </math>
+                <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib29" title="" class="ltx_ref">29</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib30" title="" class="ltx_ref">30</a>]</cite> for strong Holstein EPC. Realizing high-
+                <math id="p1.3.m3.1" class="ltx_Math" alttext="T_{c}" display="inline">
+                    <semantics id="p1.3.m3.1a">
+                        <msub id="p1.3.m3.1.1" xref="p1.3.m3.1.1.cmml">
+                            <mi id="p1.3.m3.1.1.2" xref="p1.3.m3.1.1.2.cmml">T</mi>
+                            <mi id="p1.3.m3.1.1.3" xref="p1.3.m3.1.1.3.cmml">c</mi>
+                        </msub>
+                        <annotation-xml encoding="MathML-Content" id="p1.3.m3.1b">
+                            <apply id="p1.3.m3.1.1.cmml" xref="p1.3.m3.1.1">
+                                <csymbol cd="ambiguous" id="p1.3.m3.1.1.1.cmml" xref="p1.3.m3.1.1">subscript</csymbol>
+                                <ci id="p1.3.m3.1.1.2.cmml" xref="p1.3.m3.1.1.2">𝑇</ci>
+                                <ci id="p1.3.m3.1.1.3.cmml" xref="p1.3.m3.1.1.3">𝑐</ci>
+                            </apply>
+                        </annotation-xml>
+                        <annotation encoding="application/x-tex" id="p1.3.m3.1c">T_{c}</annotation>
+                        <annotation encoding="application/x-llamapun" id="p1.3.m3.1d">italic_T start_POSTSUBSCRIPT italic_c end_POSTSUBSCRIPT</annotation>
+                    </semantics>
+                </math>
+                SC at ambient pressure dominantly driven by EPC remains a challenge, although intriguing progresses towards this goal have been made <cite class="ltx_cite ltx_citemacro_cite">[<a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib39" title="" class="ltx_ref">39</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib40" title="" class="ltx_ref">40</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib41" title="" class="ltx_ref">41</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib42" title="" class="ltx_ref">42</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib43" title="" class="ltx_ref">43</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib44" title="" class="ltx_ref">44</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib45" title="" class="ltx_ref">45</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib46" title="" class="ltx_ref">46</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib47" title="" class="ltx_ref">47</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib48" title="" class="ltx_ref">48</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib49" title="" class="ltx_ref">49</a>, <a href="https://browse.arxiv.org/latexml/2308.06222v1/2308.06222v1.html#bib.bib50" title="" class="ltx_ref">50</a>]</cite>.
+            </p>
+            <button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+            <div class="modal fade" id="citationModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog" id="myModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Citations</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Citation links will be populated here -->
+                            <p>I'm a link</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <section id="bib" class="ltx_bibliography">
+            <h2 class="ltx_title ltx_title_bibliography">References</h2><button class="sr-only button" style="display: none;">Open issue for preceding element</button>
+
+            <ul class="ltx_biblist">
+            <li id="bib.bib1" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Keimer&nbsp;<em id="bib.bib1.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">B.&nbsp;Keimer, S.&nbsp;A.&nbsp;Kivelson, M.&nbsp;R.&nbsp;Norman, S.&nbsp;Uchida,&nbsp;and&nbsp;J.&nbsp;Zaanen,&nbsp;<a href="https://doi.org/10.1038/nature14165" title="" class="ltx_ref ltx_href">Nature&nbsp;<span id="bib.bib1.3.1.1" class="ltx_text ltx_font_bold">518</span>,&nbsp;179 (2015)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib2" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kivelson&nbsp;<em id="bib.bib2.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2003]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;A.&nbsp;Kivelson, I.&nbsp;P.&nbsp;Bindloss, E.&nbsp;Fradkin,
+            V.&nbsp;Oganesyan, J.&nbsp;M.&nbsp;Tranquada, A.&nbsp;Kapitulnik,&nbsp;and&nbsp;C.&nbsp;Howald,&nbsp;<a href="https://doi.org/10.1103/RevModPhys.75.1201" title="" class="ltx_ref ltx_href">Rev. Mod. Phys.&nbsp;<span id="bib.bib2.3.1.1" class="ltx_text ltx_font_bold">75</span>,&nbsp;1201 (2003)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib3" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Sachdev [2003]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;Sachdev,&nbsp;<a href="https://doi.org/10.1103/RevModPhys.75.913" title="" class="ltx_ref ltx_href">Rev. Mod. Phys.&nbsp;<span id="bib.bib3.1.1.1" class="ltx_text ltx_font_bold">75</span>,&nbsp;913 (2003)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib4" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lee&nbsp;<em id="bib.bib4.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2006]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">P.&nbsp;A.&nbsp;Lee, N.&nbsp;Nagaosa,&nbsp;and&nbsp;X.-G.&nbsp;Wen,&nbsp;<a href="https://doi.org/10.1103/RevModPhys.78.17" title="" class="ltx_ref ltx_href">Rev. Mod. Phys.&nbsp;<span id="bib.bib4.3.1.1" class="ltx_text ltx_font_bold">78</span>,&nbsp;17 (2006)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib5" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Chen&nbsp;<em id="bib.bib5.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2014]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">X.&nbsp;Chen, P.&nbsp;Dai, D.&nbsp;Feng, T.&nbsp;Xiang,&nbsp;and&nbsp;F.-C.&nbsp;Zhang,&nbsp;<a href="https://doi.org/10.1093/nsr/nwu007" title="" class="ltx_ref ltx_href">National Science Review&nbsp;<span id="bib.bib5.3.1.1" class="ltx_text ltx_font_bold">1</span>,&nbsp;371 (2014)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib6" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lee [2018]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">D.-H.&nbsp;Lee,&nbsp;<a href="https://doi.org/10.1146/annurev-conmatphys-033117-053942" title="" class="ltx_ref ltx_href">Annual Review of Condensed Matter
+            Physics&nbsp;<span id="bib.bib6.1.1.1" class="ltx_text ltx_font_bold">9</span>,&nbsp;261 (2018)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib7" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Fernandes&nbsp;<em id="bib.bib7.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">R.&nbsp;M.&nbsp;Fernandes, A.&nbsp;I.&nbsp;Coldea, H.&nbsp;Ding,
+            I.&nbsp;R.&nbsp;Fisher, P.&nbsp;J.&nbsp;Hirschfeld,&nbsp;and&nbsp;G.&nbsp;Kotliar,&nbsp;<a href="https://doi.org/10.1038/s41586-021-04073-2" title="" class="ltx_ref ltx_href">Nature&nbsp;<span id="bib.bib7.3.1.1" class="ltx_text ltx_font_bold">601</span>,&nbsp;35 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib8" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Bardeen&nbsp;<em id="bib.bib8.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1957]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;Bardeen, L.&nbsp;N.&nbsp;Cooper,&nbsp;and&nbsp;J.&nbsp;R.&nbsp;Schrieffer,&nbsp;<a href="https://doi.org/10.1103/PhysRev.108.1175" title="" class="ltx_ref ltx_href">Phys. Rev.&nbsp;<span id="bib.bib8.3.1.1" class="ltx_text ltx_font_bold">108</span>,&nbsp;1175 (1957)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib9" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Schrieffer [1964]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;R.&nbsp;Schrieffer,&nbsp;<em id="bib.bib9.1.1" class="ltx_emph ltx_font_italic">Theory of
+            Superconductivity</em>&nbsp;(W. A. Benjamin,&nbsp;1964). 
+            </span>
+            </li>
+            <li id="bib.bib10" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Esterlis&nbsp;<em id="bib.bib10.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">I.&nbsp;Esterlis, S.&nbsp;A.&nbsp;Kivelson,&nbsp;and&nbsp;D.&nbsp;J.&nbsp;Scalapino,&nbsp;<a href="https://doi.org/10.1038/s41535-018-0133-0" title="" class="ltx_ref ltx_href">npj Quantum Materials&nbsp;<span id="bib.bib10.3.1.1" class="ltx_text ltx_font_bold">3</span>,&nbsp;59 (2018a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib11" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Scalettar&nbsp;<em id="bib.bib11.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1989]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">R.&nbsp;T.&nbsp;Scalettar, N.&nbsp;E.&nbsp;Bickers,&nbsp;and&nbsp;D.&nbsp;J.&nbsp;Scalapino,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.40.197" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib11.3.1.1" class="ltx_text ltx_font_bold">40</span>,&nbsp;197 (1989)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib12" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Moussa&nbsp;and&nbsp;Cohen [2006]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;E.&nbsp;Moussa&nbsp;and&nbsp;M.&nbsp;L.&nbsp;Cohen,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.74.094520" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib12.1.1.1" class="ltx_text ltx_font_bold">74</span>,&nbsp;094520 (2006)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib13" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Alexandrov [2001]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;S.&nbsp;Alexandrov,&nbsp;<a href="https://doi.org/10.1209/epl/i2001-00492-x" title="" class="ltx_ref ltx_href">Europhysics Letters&nbsp;<span id="bib.bib13.1.1.1" class="ltx_text ltx_font_bold">56</span>,&nbsp;92 (2001)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib14" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Prokof’ev&nbsp;and&nbsp;Svistunov [1998]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">N.&nbsp;V.&nbsp;Prokof’ev&nbsp;and&nbsp;B.&nbsp;V.&nbsp;Svistunov,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.81.2514" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib14.1.1.1" class="ltx_text ltx_font_bold">81</span>,&nbsp;2514 (1998)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib15" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Bonca&nbsp;<em id="bib.bib15.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1999]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;Bonca, S.&nbsp;A.&nbsp;Trugman,&nbsp;and&nbsp;I.&nbsp;Batistic,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.60.1633" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib15.3.1.1" class="ltx_text ltx_font_bold">60</span>,&nbsp;1633 (1999)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib16" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Chakraverty&nbsp;<em id="bib.bib16.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1998]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">B.&nbsp;K.&nbsp;Chakraverty, J.&nbsp;Ranninger,&nbsp;and&nbsp;D.&nbsp;Feinberg,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.81.433" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib16.3.1.1" class="ltx_text ltx_font_bold">81</span>,&nbsp;433 (1998)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib17" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Holstein [1959]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">T.&nbsp;Holstein,&nbsp;<a href="https://doi.org/https://doi.org/10.1016/0003-4916(59)90002-8" title="" class="ltx_ref ltx_href">Annals of Physics&nbsp;<span id="bib.bib17.1.1.1" class="ltx_text ltx_font_bold">8</span>,&nbsp;325 (1959)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib18" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Noack&nbsp;<em id="bib.bib18.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1991]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">R.&nbsp;M.&nbsp;Noack, D.&nbsp;J.&nbsp;Scalapino,&nbsp;and&nbsp;R.&nbsp;T.&nbsp;Scalettar,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.66.778" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib18.3.1.1" class="ltx_text ltx_font_bold">66</span>,&nbsp;778 (1991)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib19" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Freericks&nbsp;<em id="bib.bib19.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1993]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;K.&nbsp;Freericks, M.&nbsp;Jarrell,&nbsp;and&nbsp;D.&nbsp;J.&nbsp;Scalapino,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.48.6302" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib19.3.1.1" class="ltx_text ltx_font_bold">48</span>,&nbsp;6302 (1993)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib20" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Macridin&nbsp;<em id="bib.bib20.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2004]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;Macridin, G.&nbsp;A.&nbsp;Sawatzky,&nbsp;and&nbsp;M.&nbsp;Jarrell,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.69.245111" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib20.3.1.1" class="ltx_text ltx_font_bold">69</span>,&nbsp;245111 (2004)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib21" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Berger&nbsp;<em id="bib.bib21.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1995]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">E.&nbsp;Berger, P.&nbsp;Valasek,&nbsp;and&nbsp;W.&nbsp;von&nbsp;der Linden,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.52.4806" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib21.3.1.1" class="ltx_text ltx_font_bold">52</span>,&nbsp;4806 (1995)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib22" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Jeckelmann&nbsp;and&nbsp;White [1998]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">E.&nbsp;Jeckelmann&nbsp;and&nbsp;S.&nbsp;R.&nbsp;White,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.57.6376" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib22.1.1.1" class="ltx_text ltx_font_bold">57</span>,&nbsp;6376 (1998)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib23" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Marsiglio [1990]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">F.&nbsp;Marsiglio,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.42.2416" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib23.1.1.1" class="ltx_text ltx_font_bold">42</span>,&nbsp;2416 (1990)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib24" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Clay&nbsp;and&nbsp;Hardikar [2005]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">R.&nbsp;T.&nbsp;Clay&nbsp;and&nbsp;R.&nbsp;P.&nbsp;Hardikar,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.95.096401" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib24.1.1.1" class="ltx_text ltx_font_bold">95</span>,&nbsp;096401 (2005)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib25" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Werner&nbsp;and&nbsp;Millis [2007]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">P.&nbsp;Werner&nbsp;and&nbsp;A.&nbsp;J.&nbsp;Millis,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.99.146404" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib25.1.1.1" class="ltx_text ltx_font_bold">99</span>,&nbsp;146404 (2007)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib26" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Johnston&nbsp;<em id="bib.bib26.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2013]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;Johnston, E.&nbsp;A.&nbsp;Nowadnick, Y.&nbsp;F.&nbsp;Kung,
+            B.&nbsp;Moritz, R.&nbsp;T.&nbsp;Scalettar,&nbsp;and&nbsp;T.&nbsp;P.&nbsp;Devereaux,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.87.235133" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib26.3.1.1" class="ltx_text ltx_font_bold">87</span>,&nbsp;235133 (2013)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib27" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib27.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li, M.&nbsp;L.&nbsp;Cohen,&nbsp;and&nbsp;D.-H.&nbsp;Lee,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.100.245105" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib27.3.1.1" class="ltx_text ltx_font_bold">100</span>,&nbsp;245105 (2019a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib28" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib28.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">D.&nbsp;Wang, W.-S.&nbsp;Wang,&nbsp;and&nbsp;Q.-H.&nbsp;Wang,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.92.195102" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib28.3.1.1" class="ltx_text ltx_font_bold">92</span>,&nbsp;195102 (2015a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib29" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Esterlis&nbsp;<em id="bib.bib29.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">I.&nbsp;Esterlis, B.&nbsp;Nosarzewski, E.&nbsp;W.&nbsp;Huang, B.&nbsp;Moritz,
+            T.&nbsp;P.&nbsp;Devereaux, D.&nbsp;J.&nbsp;Scalapino,&nbsp;and&nbsp;S.&nbsp;A.&nbsp;Kivelson,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.97.140501" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib29.3.1.1" class="ltx_text ltx_font_bold">97</span>,&nbsp;140501 (2018b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib30" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Esterlis&nbsp;<em id="bib.bib30.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">I.&nbsp;Esterlis, S.&nbsp;A.&nbsp;Kivelson,&nbsp;and&nbsp;D.&nbsp;J.&nbsp;Scalapino,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.99.174516" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib30.3.1.1" class="ltx_text ltx_font_bold">99</span>,&nbsp;174516 (2019)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib31" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Costa&nbsp;<em id="bib.bib31.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">N.&nbsp;C.&nbsp;Costa, T.&nbsp;Blommel,
+            W.-T.&nbsp;Chiu, G.&nbsp;Batrouni,&nbsp;and&nbsp;R.&nbsp;T.&nbsp;Scalettar,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.120.187003" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib31.3.1.1" class="ltx_text ltx_font_bold">120</span>,&nbsp;187003 (2018a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib32" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Chen&nbsp;<em id="bib.bib32.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Chen, X.&nbsp;Y.&nbsp;Xu,
+            Z.&nbsp;Y.&nbsp;Meng,&nbsp;and&nbsp;M.&nbsp;Hohenadler,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.122.077601" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib32.3.1.1" class="ltx_text ltx_font_bold">122</span>,&nbsp;077601 (2019)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib33" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Cohen-Stead&nbsp;<em id="bib.bib33.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2020]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">B.&nbsp;Cohen-Stead, K.&nbsp;Barros,
+            Z.&nbsp;Meng, C.&nbsp;Chen, R.&nbsp;T.&nbsp;Scalettar,&nbsp;and&nbsp;G.&nbsp;G.&nbsp;Batrouni,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.102.161108" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib33.3.1.1" class="ltx_text ltx_font_bold">102</span>,&nbsp;161108 (2020)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib34" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Han&nbsp;<em id="bib.bib34.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2020]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.&nbsp;Han, S.&nbsp;A.&nbsp;Kivelson,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.125.167001" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib34.3.1.1" class="ltx_text ltx_font_bold">125</span>,&nbsp;167001 (2020)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib35" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nosarzewski&nbsp;<em id="bib.bib35.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">B.&nbsp;Nosarzewski, E.&nbsp;W.&nbsp;Huang, P.&nbsp;M.&nbsp;Dee,
+            I.&nbsp;Esterlis, B.&nbsp;Moritz, S.&nbsp;A.&nbsp;Kivelson, S.&nbsp;Johnston,&nbsp;and&nbsp;T.&nbsp;P.&nbsp;Devereaux,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.103.235156" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib35.3.1.1" class="ltx_text ltx_font_bold">103</span>,&nbsp;235156 (2021)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib36" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib36.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li, T.&nbsp;P.&nbsp;Devereaux,&nbsp;and&nbsp;D.-H.&nbsp;Lee,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.100.241101" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib36.3.1.1" class="ltx_text ltx_font_bold">100</span>,&nbsp;241101 (2019b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib37" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib37.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2020]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Y.&nbsp;Wang, I.&nbsp;Esterlis,
+            T.&nbsp;Shi, J.&nbsp;I.&nbsp;Cirac,&nbsp;and&nbsp;E.&nbsp;Demler,&nbsp;<a href="https://doi.org/10.1103/PhysRevResearch.2.043258" title="" class="ltx_ref ltx_href">Phys. Rev. Research&nbsp;<span id="bib.bib37.3.1.1" class="ltx_text ltx_font_bold">2</span>,&nbsp;043258 (2020)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib38" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Costa&nbsp;<em id="bib.bib38.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">N.&nbsp;C.&nbsp;Costa, T.&nbsp;Blommel,
+            W.-T.&nbsp;Chiu, G.&nbsp;Batrouni,&nbsp;and&nbsp;R.&nbsp;T.&nbsp;Scalettar,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.120.187003" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib38.3.1.1" class="ltx_text ltx_font_bold">120</span>,&nbsp;187003 (2018b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib39" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib39.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2008]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Q.-Y.&nbsp;Wang, Z.&nbsp;Li, W.-H.&nbsp;Zhang, Z.-C.&nbsp;Zhang, J.-S.&nbsp;Zhang, W.&nbsp;Li, H.&nbsp;Ding, Y.-B.&nbsp;Ou, P.&nbsp;Deng, K.&nbsp;Chang,
+            J.&nbsp;Wen, C.-L.&nbsp;Song, K.&nbsp;He, J.-F.&nbsp;Jia, S.-H.&nbsp;Ji, Y.-Y.&nbsp;Wang, L.-L.&nbsp;Wang,
+            X.&nbsp;Chen, X.-C.&nbsp;Ma,&nbsp;and&nbsp;Q.-K.&nbsp;Xue,&nbsp;<a href="https://doi.org/10.1088/0256-307X/25/9/083" title="" class="ltx_ref ltx_href">Chinese Physics Letters&nbsp;<span id="bib.bib39.3.1.1" class="ltx_text ltx_font_bold">25</span>,&nbsp;3403 (2008)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib40" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nagamatsu&nbsp;<em id="bib.bib40.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2001]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;Nagamatsu, N.&nbsp;Nakagawa,
+            T.&nbsp;Muranaka, Y.&nbsp;Zenitani,&nbsp;and&nbsp;J.&nbsp;Akimitsu,&nbsp;<a href="https://doi.org/10.1038/35065039" title="" class="ltx_ref ltx_href">Nature&nbsp;<span id="bib.bib40.3.1.1" class="ltx_text ltx_font_bold">410</span>,&nbsp;63
+            (2001)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib41" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Honerkamp&nbsp;<em id="bib.bib41.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2007]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Honerkamp, H.&nbsp;C.&nbsp;Fu,&nbsp;and&nbsp;D.-H.&nbsp;Lee,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.75.014503" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib41.3.1.1" class="ltx_text ltx_font_bold">75</span>,&nbsp;014503 (2007)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib42" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Gao&nbsp;<em id="bib.bib42.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">M.&nbsp;Gao, Z.-Y.&nbsp;Lu,&nbsp;and&nbsp;T.&nbsp;Xiang,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.91.045132" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib42.3.1.1" class="ltx_text ltx_font_bold">91</span>,&nbsp;045132 (2015)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib43" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">An&nbsp;and&nbsp;Pickett [2001]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;M.&nbsp;An&nbsp;and&nbsp;W.&nbsp;E.&nbsp;Pickett,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.86.4366" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib43.1.1.1" class="ltx_text ltx_font_bold">86</span>,&nbsp;4366 (2001)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib44" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Song&nbsp;<em id="bib.bib44.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Q.&nbsp;Song, T.&nbsp;L.&nbsp;Yu,
+            X.&nbsp;Lou, B.&nbsp;P.&nbsp;Xie, H.&nbsp;C.&nbsp;Xu, C.&nbsp;H.&nbsp;P.&nbsp;Wen, Q.&nbsp;Yao, S.&nbsp;Y.&nbsp;Zhang,
+            X.&nbsp;T.&nbsp;Zhu, J.&nbsp;D.&nbsp;Guo, R.&nbsp;Peng,&nbsp;and&nbsp;D.&nbsp;L.&nbsp;Feng,&nbsp;<a href="https://doi.org/10.1038/s41467-019-08560-z" title="" class="ltx_ref ltx_href">Nature Communications&nbsp;<span id="bib.bib44.3.1.1" class="ltx_text ltx_font_bold">10</span>,&nbsp;758 (2019)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib45" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lee&nbsp;<em id="bib.bib45.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2014]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;J.&nbsp;Lee, F.&nbsp;T.&nbsp;Schmitt,
+            R.&nbsp;G.&nbsp;Moore, S.&nbsp;Johnston, Y.-T.&nbsp;Cui, W.&nbsp;Li, M.&nbsp;Yi, Z.&nbsp;K.&nbsp;Liu,
+            M.&nbsp;Hashimoto, Y.&nbsp;Zhang, D.&nbsp;H.&nbsp;Lu, T.&nbsp;P.&nbsp;Devereaux, D.-H.&nbsp;Lee,&nbsp;and&nbsp;Z.-X.&nbsp;Shen,&nbsp;<a href="https://doi.org/10.1038/nature13894" title="" class="ltx_ref ltx_href">Nature&nbsp;<span id="bib.bib45.3.1.1" class="ltx_text ltx_font_bold">515</span>,&nbsp;245 (2014)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib46" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib46.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2016a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li, F.&nbsp;Wang, H.&nbsp;Yao,&nbsp;and&nbsp;D.-H.&nbsp;Lee,&nbsp;<a href="https://doi.org/10.1007/s11434-016-1087-x" title="" class="ltx_ref ltx_href">Science Bulletin&nbsp;<span id="bib.bib46.3.1.1" class="ltx_text ltx_font_bold">61</span>,&nbsp;925 (2016a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib47" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Chen&nbsp;<em id="bib.bib47.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.&nbsp;Chen, Y.&nbsp;Wang, S.&nbsp;N.&nbsp;Rebec, T.&nbsp;Jia, M.&nbsp;Hashimoto, D.&nbsp;Lu, B.&nbsp;Moritz, R.&nbsp;G.&nbsp;Moore,
+            T.&nbsp;P.&nbsp;Devereaux,&nbsp;and&nbsp;Z.-X.&nbsp;Shen,&nbsp;<a href="https://doi.org/10.1126/science.abf5174" title="" class="ltx_ref ltx_href">Science&nbsp;<span id="bib.bib47.3.1.1" class="ltx_text ltx_font_bold">373</span>,&nbsp;1235 (2021)</a>,&nbsp;<a href="https://arxiv.org/abs/https://www.science.org/doi/pdf/10.1126/science.abf5174" title="" class="ltx_ref ltx_href">https://www.science.org/doi/pdf/10.1126/science.abf5174</a> . 
+            </span>
+            </li>
+            <li id="bib.bib48" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Tang&nbsp;<em id="bib.bib48.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2023]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">T.&nbsp;Tang, B.&nbsp;Moritz,
+            C.&nbsp;Peng, Z.-X.&nbsp;Shen,&nbsp;and&nbsp;T.&nbsp;P.&nbsp;Devereaux,&nbsp;<a href="https://doi.org/10.1038/s41467-023-38408-6" title="" class="ltx_ref ltx_href">Nature Communications&nbsp;<span id="bib.bib48.3.1.1" class="ltx_text ltx_font_bold">14</span>,&nbsp;3129 (2023)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib49" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib49.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022a]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">H.-X.&nbsp;Wang, Y.-M.&nbsp;Wu,
+            Y.-F.&nbsp;Jiang,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.48550/arXiv.2211.02031" title="" class="ltx_ref ltx_href">arXiv e-prints&nbsp;,&nbsp;arXiv:2211.02031 (2022a)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib50" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib50.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2019c]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.&nbsp;Li, G.&nbsp;Antonius,
+            M.&nbsp;Wu, F.&nbsp;H.&nbsp;da&nbsp;Jornada,&nbsp;and&nbsp;S.&nbsp;G.&nbsp;Louie,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.122.186402" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib50.3.1.1" class="ltx_text ltx_font_bold">122</span>,&nbsp;186402 (2019c)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib51" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Su&nbsp;<em id="bib.bib51.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1979]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">W.&nbsp;P.&nbsp;Su, J.&nbsp;R.&nbsp;Schrieffer,&nbsp;and&nbsp;A.&nbsp;J.&nbsp;Heeger,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.42.1698" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib51.3.1.1" class="ltx_text ltx_font_bold">42</span>,&nbsp;1698 (1979)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib52" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Heeger&nbsp;<em id="bib.bib52.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1988]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;J.&nbsp;Heeger, S.&nbsp;Kivelson,
+            J.&nbsp;R.&nbsp;Schrieffer,&nbsp;and&nbsp;W.&nbsp;P.&nbsp;Su,&nbsp;<a href="https://doi.org/10.1103/RevModPhys.60.781" title="" class="ltx_ref ltx_href">Rev. Mod. Phys.&nbsp;<span id="bib.bib52.3.1.1" class="ltx_text ltx_font_bold">60</span>,&nbsp;781 (1988)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib53" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Sous&nbsp;<em id="bib.bib53.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">J.&nbsp;Sous, M.&nbsp;Chakraborty,
+            R.&nbsp;V.&nbsp;Krems,&nbsp;and&nbsp;M.&nbsp;Berciu,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.121.247001" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib53.3.1.1" class="ltx_text ltx_font_bold">121</span>,&nbsp;247001 (2018)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib54" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nocera&nbsp;<em id="bib.bib54.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;Nocera, J.&nbsp;Sous,
+            A.&nbsp;E.&nbsp;Feiguin,&nbsp;and&nbsp;M.&nbsp;Berciu,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.104.L201109" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib54.3.1.1" class="ltx_text ltx_font_bold">104</span>,&nbsp;L201109 (2021)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib55" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Weber&nbsp;<em id="bib.bib55.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">M.&nbsp;Weber, F.&nbsp;F.&nbsp;Assaad,&nbsp;and&nbsp;M.&nbsp;Hohenadler,&nbsp;Physical Review
+            B&nbsp;<span id="bib.bib55.3.1" class="ltx_text ltx_font_bold">91</span>,&nbsp;245147 (2015). 
+            </span>
+            </li>
+            <li id="bib.bib56" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Weber&nbsp;<em id="bib.bib56.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2020]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">M.&nbsp;Weber, F.&nbsp;Parisen&nbsp;Toldin,&nbsp;and&nbsp;M.&nbsp;Hohenadler,&nbsp;<a href="https://doi.org/10.1103/PhysRevResearch.2.023013" title="" class="ltx_ref ltx_href">Phys. Rev. Research&nbsp;<span id="bib.bib56.3.1.1" class="ltx_text ltx_font_bold">2</span>,&nbsp;023013 (2020)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib57" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Xing&nbsp;<em id="bib.bib57.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">B.&nbsp;Xing, W.-T.&nbsp;Chiu,
+            D.&nbsp;Poletti, R.&nbsp;T.&nbsp;Scalettar,&nbsp;and&nbsp;G.&nbsp;Batrouni,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.126.017601" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib57.3.1.1" class="ltx_text ltx_font_bold">126</span>,&nbsp;017601 (2021)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib58" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Cai&nbsp;<em id="bib.bib58.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">X.&nbsp;Cai, Z.-X.&nbsp;Li,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.127.247203" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib58.3.1.1" class="ltx_text ltx_font_bold">127</span>,&nbsp;247203 (2021)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib59" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Cai&nbsp;<em id="bib.bib59.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">X.&nbsp;Cai, Z.-X.&nbsp;Li,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.106.L081115" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib59.3.1.1" class="ltx_text ltx_font_bold">106</span>,&nbsp;L081115 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib60" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Götz&nbsp;<em id="bib.bib60.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;Götz, S.&nbsp;Beyl,
+            M.&nbsp;Hohenadler,&nbsp;and&nbsp;F.&nbsp;F.&nbsp;Assaad,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.105.085151" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib60.3.1.1" class="ltx_text ltx_font_bold">105</span>,&nbsp;085151 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib61" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Feng&nbsp;<em id="bib.bib61.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Feng, B.&nbsp;Xing, D.&nbsp;Poletti, R.&nbsp;Scalettar,&nbsp;and&nbsp;G.&nbsp;Batrouni,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.106.L081114" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib61.3.1.1" class="ltx_text ltx_font_bold">106</span>,&nbsp;L081114 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib62" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">[62]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;Götz, M.&nbsp;Hohenadler,&nbsp;and&nbsp;F.&nbsp;F.&nbsp;Assaad,&nbsp;<a href="https://arxiv.org/abs/2307.07613" title="" class="ltx_ref ltx_href">arXiv:2307.07613</a> . 
+            </span>
+            </li>
+            <li id="bib.bib63" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;and&nbsp;Johnston [2020]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;Li&nbsp;and&nbsp;S.&nbsp;Johnston,&nbsp;<a href="https://doi.org/10.1038/s41535-020-0243-3" title="" class="ltx_ref ltx_href">npj Quantum Materials&nbsp;<span id="bib.bib63.1.1.1" class="ltx_text ltx_font_bold">5</span>,&nbsp;40 (2020)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib64" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">[64]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;Li&nbsp;and&nbsp;S.&nbsp;Johnston,&nbsp;arXiv e-prints&nbsp;<a href="https://arxiv.org/abs/2205.12678" title="" class="ltx_ref ltx_href">arXiv:2205.12678</a> . 
+            </span>
+            </li>
+            <li id="bib.bib65" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Yang&nbsp;<em id="bib.bib65.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Q.-G.&nbsp;Yang, D.&nbsp;Wang,&nbsp;and&nbsp;Q.-H.&nbsp;Wang,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.106.245136" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib65.3.1.1" class="ltx_text ltx_font_bold">106</span>,&nbsp;245136 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib66" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib66.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">H.-X.&nbsp;Wang, Y.-F.&nbsp;Jiang,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.48550/arXiv.2211.09143" title="" class="ltx_ref ltx_href">arXiv e-prints&nbsp;,&nbsp;arXiv:2211.09143 (2022b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib67" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kim&nbsp;<em id="bib.bib67.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2023]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">K.-S.&nbsp;Kim, Z.&nbsp;Han,&nbsp;and&nbsp;J.&nbsp;Sous,&nbsp;<a href="https://doi.org/10.48550/arXiv.2308.01961" title="" class="ltx_ref ltx_href">arXiv e-prints&nbsp;,&nbsp;arXiv:2308.01961 (2023)</a>,&nbsp;<a href="https://arxiv.org/abs/2308.01961" title="" class="ltx_ref ltx_href">arXiv:2308.01961 [cond-mat.supr-con]</a> . 
+            </span>
+            </li>
+            <li id="bib.bib68" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Zhang&nbsp;<em id="bib.bib68.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2023]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Zhang, J.&nbsp;Sous,
+            D.&nbsp;R.&nbsp;Reichman, M.&nbsp;Berciu, A.&nbsp;J.&nbsp;Millis, N.&nbsp;V.&nbsp;Prokof’ev,&nbsp;and&nbsp;B.&nbsp;V.&nbsp;Svistunov,&nbsp;<a href="https://doi.org/10.1103/PhysRevX.13.011010" title="" class="ltx_ref ltx_href">Phys. Rev. X&nbsp;<span id="bib.bib68.3.1.1" class="ltx_text ltx_font_bold">13</span>,&nbsp;011010 (2023)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib69" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Zhang&nbsp;<em id="bib.bib69.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2022]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Zhang, N.&nbsp;V.&nbsp;Prokof’ev,&nbsp;and&nbsp;B.&nbsp;V.&nbsp;Svistunov,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.105.L020501" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib69.3.1.1" class="ltx_text ltx_font_bold">105</span>,&nbsp;L020501 (2022)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib70" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Zhang&nbsp;<em id="bib.bib70.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2021]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Zhang, N.&nbsp;V.&nbsp;Prokof’ev,&nbsp;and&nbsp;B.&nbsp;V.&nbsp;Svistunov,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.104.035143" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib70.3.1.1" class="ltx_text ltx_font_bold">104</span>,&nbsp;035143 (2021)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib71" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wu&nbsp;and&nbsp;Zhang [2005]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">C.&nbsp;Wu&nbsp;and&nbsp;S.-C.&nbsp;Zhang,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.71.155115" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib71.1.1.1" class="ltx_text ltx_font_bold">71</span>,&nbsp;155115 (2005)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib72" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib72.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li, Y.-F.&nbsp;Jiang,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.91.241117" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib72.3.1.1" class="ltx_text ltx_font_bold">91</span>,&nbsp;241117 (2015)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib73" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;<em id="bib.bib73.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2016b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li, Y.-F.&nbsp;Jiang,&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.117.267002" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib73.3.1.1" class="ltx_text ltx_font_bold">117</span>,&nbsp;267002 (2016b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib74" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wei&nbsp;<em id="bib.bib74.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2016]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.&nbsp;C.&nbsp;Wei, C.&nbsp;Wu, Y.&nbsp;Li, S.&nbsp;Zhang,&nbsp;and&nbsp;T.&nbsp;Xiang,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.116.250601" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib74.3.1.1" class="ltx_text ltx_font_bold">116</span>,&nbsp;250601 (2016)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib75" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wang&nbsp;<em id="bib.bib75.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2015b]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">L.&nbsp;Wang, Y.-H.&nbsp;Liu,
+            M.&nbsp;Iazzi, M.&nbsp;Troyer,&nbsp;and&nbsp;G.&nbsp;Harcos,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.115.250601" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib75.3.1.1" class="ltx_text ltx_font_bold">115</span>,&nbsp;250601 (2015b)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib76" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li&nbsp;and&nbsp;Yao [2019]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Z.-X.&nbsp;Li&nbsp;and&nbsp;H.&nbsp;Yao,&nbsp;<a href="https://doi.org/10.1146/annurev-conmatphys-033117-054307" title="" class="ltx_ref ltx_href">Annual Review of Condensed Matter Physics&nbsp;<span id="bib.bib76.1.1.1" class="ltx_text ltx_font_bold">10</span>,&nbsp;337 (2019)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib77" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Assaad&nbsp;and&nbsp;Evertz [2008]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">F.&nbsp;Assaad&nbsp;and&nbsp;H.&nbsp;Evertz,&nbsp;World-line and determinantal quantum monte
+            carlo methods for spins, phonons and electrons,&nbsp;in&nbsp;<a href="https://doi.org/10.1007/978-3-540-74686-7_10" title="" class="ltx_ref ltx_href"><em id="bib.bib77.1.1.1" class="ltx_emph ltx_font_italic">Computational Many-Particle Physics</em></a>,&nbsp;edited by&nbsp;H.&nbsp;Fehske, R.&nbsp;Schneider,&nbsp;and&nbsp;A.&nbsp;Weiße&nbsp;(Springer Berlin Heidelberg,&nbsp;Berlin,
+            Heidelberg,&nbsp;2008)&nbsp;pp.&nbsp;277–356. 
+            </span>
+            </li>
+            <li id="bib.bib78" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Anderson [1987]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">P.&nbsp;W.&nbsp;Anderson,&nbsp;<a href="https://doi.org/10.1126/science.235.4793.1196" title="" class="ltx_ref ltx_href">Science&nbsp;<span id="bib.bib78.1.1.1" class="ltx_text ltx_font_bold">235</span>,&nbsp;1196 (1987)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib79" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Anderson&nbsp;<em id="bib.bib79.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2004]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">P.&nbsp;W.&nbsp;Anderson, P.&nbsp;A.&nbsp;Lee,
+            M.&nbsp;Randeria, T.&nbsp;M.&nbsp;Rice, N.&nbsp;Trivedi,&nbsp;and&nbsp;F.&nbsp;C.&nbsp;Zhang,&nbsp;<a href="https://doi.org/10.1088/0953-8984/16/24/r02" title="" class="ltx_ref ltx_href">Journal of Physics: Condensed Matter&nbsp;<span id="bib.bib79.3.1.1" class="ltx_text ltx_font_bold">16</span>,&nbsp;R755 (2004)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib80" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Rokhsar&nbsp;and&nbsp;Kivelson [1988]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">D.&nbsp;S.&nbsp;Rokhsar&nbsp;and&nbsp;S.&nbsp;A.&nbsp;Kivelson,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.61.2376" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib80.1.1.1" class="ltx_text ltx_font_bold">61</span>,&nbsp;2376 (1988)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib81" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Johnston&nbsp;<em id="bib.bib81.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2010]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">S.&nbsp;Johnston, F.&nbsp;Vernay,
+            B.&nbsp;Moritz, Z.-X.&nbsp;Shen, N.&nbsp;Nagaosa, J.&nbsp;Zaanen,&nbsp;and&nbsp;T.&nbsp;P.&nbsp;Devereaux,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.82.064513" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib81.3.1.1" class="ltx_text ltx_font_bold">82</span>,&nbsp;064513 (2010)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib82" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lanzara&nbsp;<em id="bib.bib82.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2001]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">A.&nbsp;Lanzara, P.&nbsp;V.&nbsp;Bogdanov, X.&nbsp;J.&nbsp;Zhou,
+            S.&nbsp;A.&nbsp;Kellar, D.&nbsp;L.&nbsp;Feng, E.&nbsp;D.&nbsp;Lu, T.&nbsp;Yoshida, H.&nbsp;Eisaki, A.&nbsp;Fujimori, K.&nbsp;Kishio, J.-I.&nbsp;Shimoyama, T.&nbsp;Noda, S.&nbsp;Uchida,
+            Z.&nbsp;Hussain,&nbsp;and&nbsp;Z.-X.&nbsp;Shen,&nbsp;<a href="https://doi.org/10.1038/35087518" title="" class="ltx_ref ltx_href">Nature&nbsp;<span id="bib.bib82.3.1.1" class="ltx_text ltx_font_bold">412</span>,&nbsp;510
+            (2001)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib83" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">He&nbsp;<em id="bib.bib83.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [2018]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">Y.&nbsp;He, M.&nbsp;Hashimoto,
+            D.&nbsp;Song, S.-D.&nbsp;Chen, J.&nbsp;He, I.&nbsp;M.&nbsp;Vishik, B.&nbsp;Moritz, D.-H.&nbsp;Lee, N.&nbsp;Nagaosa, J.&nbsp;Zaanen,
+            T.&nbsp;P.&nbsp;Devereaux, Y.&nbsp;Yoshida, H.&nbsp;Eisaki, D.&nbsp;H.&nbsp;Lu,&nbsp;and&nbsp;Z.-X.&nbsp;Shen,&nbsp;<a href="https://doi.org/10.1126/science.aar3394" title="" class="ltx_ref ltx_href">Science&nbsp;<span id="bib.bib83.3.1.1" class="ltx_text ltx_font_bold">362</span>,&nbsp;62 (2018)</a>,&nbsp;<a href="https://arxiv.org/abs/https://www.science.org/doi/pdf/10.1126/science.aar3394" title="" class="ltx_ref ltx_href">https://www.science.org/doi/pdf/10.1126/science.aar3394</a> . 
+            </span>
+            </li>
+            <li id="bib.bib84" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Scalapino&nbsp;<em id="bib.bib84.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1992]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">D.&nbsp;J.&nbsp;Scalapino, S.&nbsp;R.&nbsp;White,&nbsp;and&nbsp;S.&nbsp;C.&nbsp;Zhang,&nbsp;<a href="https://doi.org/10.1103/PhysRevLett.68.2830" title="" class="ltx_ref ltx_href">Phys. Rev. Lett.&nbsp;<span id="bib.bib84.3.1.1" class="ltx_text ltx_font_bold">68</span>,&nbsp;2830 (1992)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib85" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Scalapino&nbsp;<em id="bib.bib85.2.2.1" class="ltx_emph ltx_font_italic">et&nbsp;al.</em> [1993]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">D.&nbsp;J.&nbsp;Scalapino, S.&nbsp;R.&nbsp;White,&nbsp;and&nbsp;S.&nbsp;Zhang,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.47.7995" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib85.3.1.1" class="ltx_text ltx_font_bold">47</span>,&nbsp;7995 (1993)</a>. 
+            </span>
+            </li>
+            <li id="bib.bib86" class="ltx_bibitem">
+            <span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Assaad [2002]<button class="back-to-reference-btn" aria-label="Back to the article">↑</button></span>
+            <span class="ltx_bibblock">F.&nbsp;F.&nbsp;Assaad,&nbsp;<a href="https://doi.org/10.1103/PhysRevB.65.115104" title="" class="ltx_ref ltx_href">Phys. Rev. B&nbsp;<span id="bib.bib86.1.1.1" class="ltx_text ltx_font_bold">65</span>,&nbsp;115104 (2002)</a>. 
+            </span>
+            </li>
+            </ul>
+            </section>
+        <script>
+            function zoomImage(src) {
+              document.getElementById("zoomedImage").src = src;
+              document.getElementById("zoomed").style.display = "flex";
+            }
+            function unzoomImage() {
+              document.getElementById("zoomed").style.display = "none";
+            }
+            
+
+        </script>
+        <script src="./modal_ref.js">  
+        </script>
+</body>
+</html>
+
